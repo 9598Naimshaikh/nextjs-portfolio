@@ -1,4 +1,5 @@
 "use client"
+import { motion } from "motion/react";
 import Image from "next/image";
 
 const skill_data = [
@@ -56,7 +57,11 @@ const skill_data = [
 
 export default function SkillsTools() {
     return (
-        <div className="w-full grid md:grid-cols-2 gap-6">
+        <motion.div 
+        initial={{ filter: "blur(8px)" }}
+        animate={{ filter: "none" }}
+        transition={{ duration: 0.3 }}
+        className="w-full grid md:grid-cols-2 gap-6">
             {skill_data.map((skill, index) => {
                 return (
                     <div key={index} className="flex items-center gap-4 p-4 bg-[#262A33] rounded-md">
@@ -74,6 +79,6 @@ export default function SkillsTools() {
 
 
 
-        </div>
+        </motion.div>
     );
 }

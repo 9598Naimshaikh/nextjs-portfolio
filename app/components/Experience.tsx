@@ -1,7 +1,14 @@
+"use client";
+
+import { motion } from "motion/react";
 
 export default function Experience() {
     return (
-        <div className="w-full lg:p-8 py-8 px-4 bg-[#1e222b] rounded-md space-y-4">
+        <motion.div 
+        initial={{ filter: "blur(8px)" }}
+        animate={{ filter: "none" }}
+        transition={{ duration: 0.3 }}
+        className="w-full lg:p-8 py-8 px-4 bg-[#1e222b] rounded-md space-y-4">
             <h3 className="text-2xl font-bold text-orange-500">Experience</h3>
 
             <div className="bg-[#262A33] p-4 rounded-md">
@@ -14,6 +21,6 @@ export default function Experience() {
                 <h4 className="font-semibold">Live Website : </h4>
                 <a href="https://www.swastiksrijan.in" target="_blank" className="text-blue-400 tracking-wide text-sm">https://www.swastiksrijan.in</a>
             </div>
-        </div>
+        </motion.div>
     );
 }

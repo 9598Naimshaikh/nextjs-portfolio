@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { CiLinkedin } from "react-icons/ci";
 import { TfiTwitter } from "react-icons/tfi";
@@ -8,13 +10,18 @@ import LastFooter from "./components/LastFooter";
 import Experience from "./components/Experience";
 import SkillsTools from "./components/SkillsTools";
 import Link from "next/link";
+import { motion } from "motion/react"
 
 
 export default function Home() {
   return (
     <div className="lg:p-4 py-4 px-0 space-y-10 scroll-smooth mb-20">
       {/* Profile Section */}
-      <div className="w-full bg-[#1e222b] lg:p-8 py-8 px-4 rounded-md flex items-center flex-col justify-center">
+      <motion.div
+        initial={{ filter: "blur(8px)" }}
+        animate={{ filter: "none" }}
+        transition={{ duration: 0.3 }}
+        className="w-full bg-[#1e222b] lg:p-8 py-8 px-4 rounded-md flex items-center flex-col justify-center">
         <div className="profile bg-zinc-100 w-26 h-26 rounded-full overflow-hidden p-1">
           <Image src="/images/profile.png" alt="profile image" width={100} height={100} className="w-full h-full rounded-full" />
         </div>
@@ -22,21 +29,29 @@ export default function Home() {
           <h1 className="font-bold text-xl">Naeem Shaikh</h1>
           <p className="text-4xl font-black tracking-normal">Web Developer</p>
           <div className="onlinelinks flex items-center justify-center gap-4 text-xl my-3">
-            <a href="" target="_blank" className="text-orange-500"><CiLinkedin /></a>
-            <a href="" target="_blank" className="text-orange-500"><TfiTwitter /></a>
-            <a href="" target="_blank" className="text-orange-500"><FaInstagram /></a>
+            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="" target="_blank" className="text-orange-500"><CiLinkedin /></motion.a>
+            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="" target="_blank" className="text-orange-500"><TfiTwitter /></motion.a>
+            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="" target="_blank" className="text-orange-500"><FaInstagram /></motion.a>
           </div>
 
           <p className="max-w-xs text-zinc-400 font-medium">Hi, I&apos;m Naeem Shaikh, a creative Web Developer who loves to create modern and stunning websites.</p>
 
         </div>
-      </div>
+      </motion.div>
 
       {/* Project Section */}
-      <div className="w-full bg-[#1e222b] rounded-md md:p-8 px-4 py-8 space-y-4">
+      <motion.div
+        initial={{ filter: "blur(10px)" }}
+        animate={{ filter: "none" }}
+        transition={{ duration: 0.5 }}
+        className="w-full bg-[#1e222b] rounded-md md:p-8 px-4 py-8 space-y-4">
         <h3 className="text-2xl font-bold text-orange-500">Projects</h3>
 
-        <div className="bg-[#262A33] hover:bg-[#323845] hover:scale-101 cursor-pointer duration-300 transition-all p-4 rounded-md">
+        <motion.div
+          initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "none" }}
+          transition={{ duration: 0.3 }}
+          className="bg-[#262A33] hover:bg-[#323845] hover:scale-101 cursor-pointer duration-300 transition-all p-4 rounded-md">
           <a href="https://9598naimshaikh.github.io/Modern-Creative-NajmAI-Website/" target="_blank" className="">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
@@ -54,9 +69,13 @@ export default function Home() {
               <div className="bg-[#17191f] p-2 rounded-md"><FaArrowRightLong /></div>
             </div>
           </a>
-        </div>
+        </motion.div>
 
-        <div className="bg-[#262A33] hover:bg-[#323845] hover:scale-101 duration-300 transition-all p-4 rounded-md">
+        <motion.div
+          initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "none" }}
+          transition={{ duration: 0.3 }}
+          className="bg-[#262A33] hover:bg-[#323845] hover:scale-101 duration-300 transition-all p-4 rounded-md">
           <a href="https://9598naimshaikh.github.io/Modern-Animated-Oslo-Website/" target="_blank" className="">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
@@ -74,9 +93,13 @@ export default function Home() {
               <div className="bg-[#17191f] p-2 rounded-md"><FaArrowRightLong /></div>
             </div>
           </a>
-        </div>
+        </motion.div>
 
-        <div className="bg-[#262A33] hover:bg-[#323845] hover:scale-101 duration-300 transition-all p-4 rounded-md">
+        <motion.div
+          initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "none" }}
+          transition={{ duration: 0.3 }}
+          className="bg-[#262A33] hover:bg-[#323845] hover:scale-101 duration-300 transition-all p-4 rounded-md">
           <a href="https://9598naimshaikh.github.io/My-Personal-Light-theme-Portfolio-website/" target="_blank" className="">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
@@ -94,21 +117,25 @@ export default function Home() {
               <div className="bg-[#17191f] p-2 rounded-md"><FaArrowRightLong /></div>
             </div>
           </a>
-        </div>
+        </motion.div>
 
         <Link href="/projects" className="text-blue-500 py-2 px-4">View More......</Link>
 
-      </div>
+      </motion.div>
 
 
       {/* Experience Section */}
       <Experience />
 
       {/* Skills & Tools */}
-      <div className="w-full bg-[#1e222b] rounded-md md:p-8 px-4 py-8 space-y-4">
+      <motion.div
+        initial={{ filter: "blur(8px)" }}
+        animate={{ filter: "none" }}
+        transition={{ duration: 0.3 }}
+        className="w-full bg-[#1e222b] rounded-md md:p-8 px-4 py-8 space-y-4">
         <h3 className="text-2xl font-bold text-orange-500">Skills & Tools</h3>
         <SkillsTools />
-      </div>
+      </motion.div>
 
       {/* First Footer */}
       <FirstFooter />

@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "motion/react"
 import Link from "next/link";
 import {
   Home,
@@ -19,9 +19,13 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="fixed -bottom-6 left-0 flex items-center justify-center w-full px-4 z-50">
+    <motion.header
+    initial={{opacity: 0, y:20}} 
+    animate={{opacity: 1, y:0}}
+    transition={{duration: 0.2}}
+    className="fixed -bottom-6 left-0 flex items-center justify-center w-full px-4 z-50">
 
-        <nav className="flex justify-center rounded-md bg-[#1e222ba5] backdrop-blur-lg border border-zinc-500/20 shadow-[2px_2px_0px_orangered]">
+        <nav className="flex justify-center rounded-md bg-[#1e222ba5] bg-linear-to-bl to-orange-900/80 from-zinc-900 backdrop-blur-lg border border-zinc-100/30 shadow-[2px_2px_0px_orangered]">
           <ul className="flex items-center gap-6 px-6 py-4">
             {navItems.map((item) => (
               <li key={item.name}>
@@ -37,6 +41,6 @@ export default function Header() {
           </ul>
         </nav>
   
-    </header>
+    </motion.header>
   );
 }
