@@ -5,6 +5,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { TfiTwitter } from "react-icons/tfi";
 import { FaInstagram } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
 import FirstFooter from "./components/FirstFooter";
 import LastFooter from "./components/LastFooter";
 import Experience from "./components/Experience";
@@ -29,9 +30,10 @@ export default function Home() {
           <h1 className="font-bold text-xl">Naeem Shaikh</h1>
           <p className="text-4xl font-black tracking-normal">Web Developer</p>
           <div className="onlinelinks flex items-center justify-center gap-4 text-xl my-3">
-            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="" target="_blank" className="text-orange-500"><CiLinkedin /></motion.a>
-            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="" target="_blank" className="text-orange-500"><TfiTwitter /></motion.a>
-            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="" target="_blank" className="text-orange-500"><FaInstagram /></motion.a>
+            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="https://github.com/9598Naimshaikh" target="_blank" className="text-orange-500"><FaGithub /></motion.a>
+            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="https://www.linkedin.com/in/naeem-shaikh-9032b5289/" target="_blank" className="text-orange-500"><CiLinkedin /></motion.a>
+            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="https://x.com/Naim_Shaikh90" target="_blank" className="text-orange-500"><TfiTwitter /></motion.a>
+            <motion.a initial={{ scale: 0 }} animate={{ scale: 1 }} href="https://www.instagram.com/naim_shaikh.ss/" target="_blank" className="text-orange-500"><FaInstagram /></motion.a>
           </div>
 
           <p className="max-w-xs text-zinc-400 font-medium">Hi, I&apos;m Naeem Shaikh, a creative Web Developer who loves to create modern and stunning websites.</p>
